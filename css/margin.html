@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>margin重叠</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        /* 兄弟元素消除margin重叠 */
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin-bottom: 50px;
+            border: 1px solid black;
+        }
+        .div2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-top: 100px;
+            border: 1px solid black;
+            /* 方法1: */
+            display: inline-block;
+            /* 方法2: 设置浮动 */
+            /* float: left; */
+            /* 方法3: 设置absolute/fixed，设置该定位不设置top和left时，是默认的位置，但是脱离了文档流 */
+            /* position: fixed;
+            position: absolute; */
+        }
+
+        /* 父子元素margin重叠 */
+        .outer {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            margin-top: 100px;
+            /* 设置border */
+            /* border: 1px solid #000; */
+            /* 设置 overflow：hidden */
+            /* overflow: hidden; */
+        }
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-top: 50px;
+            /* 子元素设置inline-block或者fleat，或者fixed/absolute，和同级元素处理方法相同 */
+            /* display: inline-block; */
+            /* float: left; */
+            /* position: fixed; */
+            /* position: absolute; */
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="div1"></div>
+    <div class="div2"></div> -->
+
+    <div class="outer">
+        <div class="inner">
+
+        </div>
+    </div>
+</body>
+</html>

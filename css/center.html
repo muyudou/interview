@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>水平垂直居中</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+
+        /* 需要知道宽高 */
+        .center {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            width: 100px;
+            height: 50px;
+            background-color: bisque;
+        }
+
+        /* 最常用的一种方式，无需知道宽高 */
+        .container {
+            position: relative;
+            height: 100px;
+            margin: 10px;
+            background-color: aliceblue;
+        }
+        .center2 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            padding: 10px;
+            transform: translate(-50%, -50%);
+            background-color: aqua;
+        }
+
+        /* 常用 */
+        .container3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: aliceblue;
+            height: 100px;
+        }
+        .center3 {
+            background-color: rgb(150, 150, 238);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="center">已知宽高：absolute</div>
+    </div>
+    <div class="container">
+        <div class="center2">absolute+transform</div>
+    </div>
+    <div class="container3">
+        <div class="center3">flex</div>
+    </div>
+</body>
+</html>
