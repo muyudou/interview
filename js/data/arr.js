@@ -59,6 +59,20 @@ function flatten4(arr) {
     arr.flat(Infinity);
 }
 
+
+function *flatten(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            yield* flatten(arr[i]);
+        } else {
+            yield arr[i];
+        }
+    }
+}
+
+for (let f of flat(arr)) {
+    console.log(f);
+}
 /**
  * 数组去重，先排序，后使用快慢指针，i指向不重复的元素，j正常往后遍历，
  * j向后遍历直到遇到不等于i的元素，将这个元素放到i+1的位置，i++;

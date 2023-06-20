@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Two column</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        /* float布局 */
+        .outer {
+            height: 100px;
+        }
+        .left {
+            float: left;
+            width: 200px;
+            height: 100px;
+            background-color: tomato;
+        }
+        .right {
+            margin-left: 200px;
+            height: 100px;
+            background-color: gold;
+        }
+        /* float+overflow */
+        .outer1 {
+            /* height: 200px; */
+        }
+        .left1 {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: aliceblue;
+        }
+        .right1 {
+            height: 200px;
+            overflow: hidden;
+            background-color: saddlebrown;
+        }
+
+        /* absolute */
+        .outer2 {
+            position: relative;
+            height: 100px;
+        }
+        .left2 {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            background-color: tomato;
+        }
+        .right2 {
+            margin-left: 200px;
+            height: 100px;
+            background-color: gold;
+        }
+
+        /* absolute */
+        .outer3 {
+            position: relative;
+            height: 200px;
+        }
+        .left3 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .right3 {
+            position: absolute;
+            left: 200px;
+            top: 0;
+            right: 0;
+            height: 200px;
+            background-color: royalblue;
+        }
+
+        /* flex布局 */
+        .outer4 {
+            height: 200px;
+            display: flex;
+        }
+        .left4 {
+            width: 200px;
+            background-color: aqua;
+        }
+        .right4 {
+            flex: 1;
+            background-color: rebeccapurple;
+        }
+    </style>
+    <!-- float 左边宽度200，右边margin-left：200px，宽度auto -->
+    <div class="outer">
+        <div class="left">float布局</div>
+        <div class="right"></div>
+    </div>
+
+    <!-- float布局：左侧固定大小，左浮动，右侧设置overflow:hidden,触发BFC，BFC区域不会与浮动元素发生重叠 -->
+    <div class="outer1">
+        <div class="left1">float+overflow</div>
+        <div class="right1"></div>
+    </div>
+
+     <!-- 绝对定位：负元素releative，左边设置absolute，固定宽度200，右边margin-left：200px -->
+    <div class="outer2">
+        <div class="left2">absolute</div>
+        <div class="right2"></div>
+    </div>
+
+    <!-- 绝对定位：负元素releative，左边设置固定宽度200，右边absolute,left:200px -->
+    <!-- <div class="outer3">
+        <div class="left3">absolute</div>
+        <div class="right3"></div>
+    </div> -->
+
+    <!-- flex布局：左边设置固定宽度200，右边flex：1 -->
+    <div class="outer4">
+        <div class="left4">flex</div>
+        <div class="right4"></div>
+    </div>
+    
+</head>
+<body>
+    
+</body>
+</html>

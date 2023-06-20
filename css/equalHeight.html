@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>等高布局</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        /* margin\padding值抵消问题 */
+        .container {
+            width: 100%;
+            overflow: hidden;
+        }
+        .left,
+        .center {
+            float: left;
+            background-color: aqua;
+            padding-bottom: 9999px;
+            margin-bottom: -9999px;
+        }
+        .left {
+            width: 100px;
+            background-color: aliceblue;
+        }
+        .center {
+            width: calc(100% - 100px);
+            background-color: antiquewhite;
+        }
+
+        .container2 {
+            display: table;
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .left2,
+        .right2,
+        .center2{
+            width: 33.33%;
+            text-align: center;
+            display: table-cell;
+            background-color: coral;
+        }
+        .left2 {
+            background-color: aliceblue;
+        }
+        .right2 {
+            background-color: aquamarine;
+        }
+
+        .container3 {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .left3,
+        .right3,
+        .center3{
+            flex: 1;
+            text-align: center;
+            background-color: rgb(103, 29, 2);
+        }
+        .left3 {
+            background-color: rgb(28, 94, 152);
+        }
+        .right3 {
+            background-color: rgb(2, 98, 66);
+        }
+
+        .container4 {
+            display: grid;
+            grid-auto-flow: column;
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .left4,
+        .right4,
+        .center4{
+            text-align: center;
+            background-color: rgb(129, 121, 119);
+        }
+        .left4 {
+            background-color: rgb(79, 138, 183);
+        }
+        .right4 {
+            background-color: rgb(119, 245, 203);
+        }
+    </style>
+</head>
+<body>
+    <!-- float布局，padding和margin抵消 -->
+    <div class="container">
+        <div class="left">padding和margin相抵消布局 111111111111</div>
+        <div class="center">
+            333333333333333333333333333333333333333333333333
+            333333333333333333333333333333333333333333333333
+            33333333333333333333333</div>
+        </div>
+    </div>
+    <!-- table布局: 父元素table，子元素table-cell -->
+    <div class="container2">
+        <div class="left2">table布局 111111111111</div>
+        <div class="center2">22222222222222222222222222</div>
+        <div class="right2">
+          333333333333333333333333333333333333333333333333
+          333333333333333333333333333333333333333333333333
+          333333333333333333333333333333333333333333333333
+       </div>
+    </div>
+
+    <!-- flex布局：父元素flex，子元素flex：1 -->
+    <div class="container3">
+        <div class="left3">flex布局 111111111111</div>
+        <div class="center3">22222222222222222222222222</div>
+        <div class="right3">
+          333333333333333333333333333333333333333333333333
+          333333333333333333333333333333333333333333333333
+          333333333333333333333333333333333333333333333333
+       </div>
+    </div>
+
+    <!-- grid布局：父元素grid，grid-auto-flow: column; -->
+    <div class="container4">
+        <div class="left4">grid布局 111111111111</div>
+        <div class="center4">22222222222222222222222222</div>
+        <div class="right4">
+          333333333333333333333333333333333333333333333333
+          333333333333333333333333333333333333333333333333
+          333333333333333333333333333333333333333333333333
+       </div>
+    </div>
+</body>
+</html>
